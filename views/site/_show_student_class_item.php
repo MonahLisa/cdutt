@@ -1,0 +1,43 @@
+<?php
+/**
+ * @var $model UserHasGroup
+ * @var $user_model User
+ */
+
+use app\models\ClassGroup;
+use app\models\User;
+use app\models\UserHasGroup;
+use yii\helpers\Html;
+$model_group = ClassGroup::findOne(['id'=>$model->group_id]);
+//$id = $model->photo;
+//$media_model = ProductMedia::findOne(['id' => $id]);
+//$user_id = \Yii::$app->user->id;
+//$user_model = User::getUser($user_id);
+echo \yii\helpers\Html::img('/web/uploads/images/classes/'.$model_group->photo, ["class" => "card-img-top"]);
+//?>
+<div class="card-body">
+    <h5 class="card-title">
+        <?php
+        echo $model_group->title;
+        ?>
+        <?php
+        echo $model_group->number;
+        ?>
+    </h5>
+    <p class="card-text">
+        <?php
+        echo $model_group->descriptor;
+        ?>
+    </p>
+
+    <div class="d-grid gap-2">
+        <?= Html::a('Зайти', ['site/students-group?id='.$model_group->id], ['class' => 'btn btn-outline-primary btn-lg']) ?>
+    </div>
+
+    <!--    <a class="btn btn-outline-secondary" href="#">--><?//= $model->price ?><!-- Р</a>-->
+    <!---->
+    <!--    --><?//= $count = $model->getCount($model->id, $user_model->id) ?>
+    <!---->
+    <!--    --><?//= \yii\helpers\Html::a($count? $count :"Купить" , ["/site/buy", "id" => $model->id], ["class" => "btn btn-outline-primary", 'visible' => Yii::$app->user->can("buyProduct")]) ?>
+</div>
+

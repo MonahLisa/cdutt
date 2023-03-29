@@ -1,0 +1,17 @@
+.icon{
+    width: 45px;
+}
+
+.add-user{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.users-headline{
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
